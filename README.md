@@ -60,3 +60,5 @@ Table Name | Column_name | Description
 1. I think further improvements can be made to the `sql only` variant by using features like `parallel processing`,`no logging` and by passing buffer cache using `append` hint .
 
 1. Another variant solution can be built using partitioning and partition exchange.
+
+_Note : The timing stats is gathered by running these scripts in Oracle XE18c running inside a docker container with SGA/PGA size is 2 Gig, Host machine spec: MacBook Pro, Quad Core Intel i7, @2.80GHz, 16 Gig RAM ._
