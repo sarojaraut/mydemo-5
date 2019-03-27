@@ -1,3 +1,4 @@
+set timing on;
 -- Data set up
 -- create 10 thousand currency records
 insert into currency

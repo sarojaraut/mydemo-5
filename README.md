@@ -5,17 +5,19 @@
 
 1. [Download](https://github.com/sarojaraut/mydemo-5) this git repo `git clone git@github.com:sarojaraut/mydemo-5.git`.
 
-1. Connect to the desired oracle schema: e.g `sql MYDBA/MYDBA@localhost:31521/myoms`
+1. Connect to the desired oracle schema: e.g `sql MYDBA/MYDBA@localhost:31521/mydb`
 
-1. Run the schema setup script `@setup_schema.sql` .
+1. Run the schema setup script `@setup_schema.sql`
 
-1. Run the test data setup script `@setup_test_data.sql` .
+1. Run the test data setup script `@setup_test_data.sql`
 
-1. Now invoke the sql only version of the code `@extract_transform_load_using_sql_only.sql` .
+1. Now invoke the sql only version of the code `@extract_transform_load_using_sql_only.sql`
 
-1. Now invoke the sql/plsql version of the code `@extract_transform_load_using_sql_plsql.sql` .
+1. Now invoke the sql/plsql version of the code `@extract_transform_load_using_sql_plsql.sql`
 
 1. Assert how time taken by sql only version is faster by x times(x is directly propertional to the volume of records in the source table).
+
+1. _Optional:_ If the whole process needs to be repeated then first run the script `@tear_down_all_objects.sql` and repeat from step-1.
 
 _Note : Execute privilage is needed on `DBMS_RANDOM` package which is used during test data setup e.g. `grant execute on dbms_random to mydba`_
 
