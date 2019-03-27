@@ -7,9 +7,9 @@
 
 1. Connect to the desired oracle schema: e.g `sql MYDBA/MYDBA@localhost:31521/mydb`
 
-1. Run the schema setup script `@setup_schema.sql`
+1. Run the schema setup script `@setup_schema.sql`. This will create all tables, sequence and package. Package has two procedures one loading the target table using pure SQL and other using sql and PLSQL.
 
-1. Run the test data setup script `@setup_test_data.sql`
+1. Run the test data setup script `@setup_test_data.sql`. Populates test data, details of the data volume in the next section. This step may take 15 to 20 minutes as it populates millions of test data.
 
 1. Now invoke the sql only version of the code `@extract_transform_load_using_sql_only.sql`
 
@@ -31,6 +31,9 @@ Table Name | Record Count | Description
 `PAYMENT` | 0.375 Billion | Holds details of payment atempts for all financial transactions, status can be `success` or `fail`.
 `TRANSACTION_PAYMENT` | 0.375 Billion | Target table to be sourced from all above tables and needs to be populated with the transformed data. Data needs to be transformed based on the following tansformation rules
 
+## Data model
+
+![Screenshot](datamodel.png)
 
 ## Data transformation rules
 
